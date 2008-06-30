@@ -1,11 +1,4 @@
 Array.implement({
-	average: function(){
-		var total = 0
-		this.each(function(x){
-			total += x
-		})
-		return total/this.length
-	},
 	bsearch: function(target, fun){
 		var low = 0
 		var high = this.length
