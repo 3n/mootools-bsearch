@@ -1,0 +1,38 @@
+bsearch for MooTools 1.2
+Version 1.0
+Author: Ian Collins (3n)
+
+
+DESCRIPTION
+
+bsearch.js extends the Array native with a method "bsearch" that allows for
+binary searching of an array. As with any binary search, the array must first
+be sorted.
+
+SYNTAX
+
+my_array.bsearch(target[, function])
+
+ARGUMENTS
+
+target:     what you're looking for
+function:   optional function to use for binary comparison. If this arg isn't
+            specified, the obvious default is used. 
+            must return -1, 0, 1. 
+            expects arguments (a,b),
+
+
+EXAMPLES
+
+// search a sorted array of numbers
+[1,2,5,6,8,9,12,346].bsearch(4)       // returns null
+[1,2,5,6,8,9,12,346].bsearch(12)      // returns 12
+
+// custom binary comparison function
+// searches for a string in the array with length of 3
+['a', 'abc', 'abcdefg'].bsearch(3, function(a,b){         // returns 'abc'
+  return a.length < b ? -1 : a.length > b ? 1 : 0
+})
+
+
+  
